@@ -149,7 +149,8 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-
+            allowedOwners:
+              - guests
   steps:
     - id: opaGetPlatformInfo
       name: Get OPA platform information
