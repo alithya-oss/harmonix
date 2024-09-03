@@ -148,7 +148,7 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-              - {{ gitlab_hostname }}
+              - {{ github_hostname }}
             allowedOwners:
               - aws-environment-providers
   steps:
