@@ -148,9 +148,8 @@ spec:
           ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-              - {{ github_hostname }}
-            allowedOwners:
-              - aws-environment-providers
+              - github.com
+
   steps:
     - id: opaGetPlatformInfo
       name: Get OPA platform information
