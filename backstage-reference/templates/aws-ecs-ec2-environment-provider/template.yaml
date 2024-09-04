@@ -190,13 +190,13 @@ spec:
       action: fetch:plain
       input:
         targetPath: ./.iac/opa-ecs-ec2-environment
-        url: "https://{{ github_hostname }}/alithya-oss/harmonix/blob/integrate-github-ref/backstage-reference/environments/opa-ecs-ec2-environment"
+        url: "https://github.com/alithya-oss/harmonix/blob/integrate-github-ref/backstage-reference/environments/opa-ecs-ec2-environment"
     - id: fetchIacCommonConstructs
       name: Fetch IaC Common Constructs
       action: fetch:plain
       input:
         targetPath: ./.iac/opa-common-constructs
-        url: "https://{{ github_hostname }}/alithya-oss/harmonix/blob/integrate-github-ref/backstage-reference/environments/opa-ecs-ec2-environment"
+        url: "https://github.com/alithya-oss/harmonix/blob/integrate-github-ref/backstage-reference/environments/opa-ecs-ec2-environment"
     - id: createYarnPackageFile
       name: Configure Yarn Package Manager
       action: roadiehq:utils:fs:write
