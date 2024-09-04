@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "name": "aws-application-development",
+    "workspaces": [
+        "opa-basic-environment",
+        "opa-ecs-environment",
+        "opa-ecs-ec2-environment",
+        "opa-eks-environment",
+        "opa-serverless-environment",
+        "opa-common-constructs",
+        "opa-platform"
+    ],
+    "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}
