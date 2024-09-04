@@ -213,11 +213,11 @@ spec:
           }
     - id: publish
       name: Publish
-      action: publish:gitlab
+      action: publish:github
       input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        repoVisibility: internal
-        defaultBranch: main
     - id: register
       name: Register
       action: catalog:register
