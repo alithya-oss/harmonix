@@ -219,6 +219,7 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
         defaultBranch: main
+      timeout: 300000
     - id: register
       name: Register
       action: catalog:register
