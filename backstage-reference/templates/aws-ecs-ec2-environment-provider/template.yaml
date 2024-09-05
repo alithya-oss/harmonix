@@ -164,7 +164,7 @@ spec:
           - '/opa/platform-role'
           - '/opa/pipeline-role'
 
-    - id: fetchBase
+    {% comment %} - id: fetchBase
       name: Fetch Code Base
       action: fetch:template
       input:
@@ -210,7 +210,7 @@ spec:
               "opa-ecs-ec2-environment",
               "opa-common-constructs"
             ]
-          }
+          } {% endcomment %}
     - id: publish
       name: Publish
       action: publish:github
