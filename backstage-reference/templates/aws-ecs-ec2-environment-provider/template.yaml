@@ -150,7 +150,7 @@ spec:
             allowedHosts:
               - github.com
             allowedOwners:
-              - harmonix-generated-environments
+              - nizarajroud
   steps:
     - id: opaGetPlatformInfo
       name: Get OPA platform information
