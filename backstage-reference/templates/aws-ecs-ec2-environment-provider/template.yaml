@@ -150,7 +150,7 @@ spec:
             allowedHosts:
               - github.com
             allowedOwners:
-              - harmonix-generated-environments
+              - alithya-oss
   steps:
     - id: opaGetPlatformInfo
       name: Get OPA platform information
@@ -164,7 +164,7 @@ spec:
           - '/opa/platform-role'
           - '/opa/pipeline-role'
 
-    {% comment %} - id: fetchBase
+    - id: fetchBase
       name: Fetch Code Base
       action: fetch:template
       input:
@@ -210,7 +210,7 @@ spec:
               "opa-ecs-ec2-environment",
               "opa-common-constructs"
             ]
-          } {% endcomment %}
+          } 
     - id: publish
       name: Publish
       action: publish:github
