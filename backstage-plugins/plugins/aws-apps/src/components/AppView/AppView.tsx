@@ -67,18 +67,14 @@ export const AppView = ({ appData }: { appData: OPAAppData }): ReactElement => {
                   </Typography>
                   <Grid container>
                     <Grid item>
-                      <Typography sx={{ pt: 3, color: '#645B59' }}>
-                        repo url
-                      </Typography>
+                      <Typography sx={{ pt: 3, color: '#645B59' }}>repo url</Typography>
                       <Typography>
                         <IconButton>
                           <ContentCopyIcon />
                         </IconButton>
                         {details?.repourl}
                       </Typography>
-                      <Typography sx={{ pt: 3, color: '#645B59' }}>
-                        repo token
-                      </Typography>
+                      <Typography sx={{ pt: 3, color: '#645B59' }}>repo token</Typography>
                       <Typography>
                         <IconButton>
                           <ContentCopyIcon />
@@ -100,16 +96,9 @@ export const AppView = ({ appData }: { appData: OPAAppData }): ReactElement => {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Divider
-                  orientation="vertical"
-                  flexItem
-                  sx={{ mr: '-1px', mt: 2 }}
-                />
+                <Divider orientation="vertical" flexItem sx={{ mr: '-1px', mt: 2 }} />
                 <Grid item xs={4}>
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ pt: 3, color: '#645B59', fontWeight: 'bold' }}
-                  >
+                  <Typography variant="subtitle1" sx={{ pt: 3, color: '#645B59', fontWeight: 'bold' }}>
                     Deployment Info
                   </Typography>
                   <Grid container>
@@ -129,22 +118,16 @@ export const AppView = ({ appData }: { appData: OPAAppData }): ReactElement => {
                         </IconButton>
                         {details?.account}
                       </Typography>
-                      <Typography sx={{ pt: 3, color: '#645B59' }}>
-                        Region
-                      </Typography>
+                      <Typography sx={{ pt: 3, color: '#645B59' }}>Region</Typography>
                       <Typography sx={{ mt: 1 }}>{details?.region}</Typography>
                     </Grid>
                     <Grid item xs={6}>
-                      <Typography sx={{ pt: 3, color: '#645B59' }}>
-                        Version
-                      </Typography>
+                      <Typography sx={{ pt: 3, color: '#645B59' }}>Version</Typography>
                       <Typography sx={{ mt: 1 }}>1.0.0</Typography>
                       <Typography sx={{ pt: 3, color: '#645B59' }}>
                         Environment
                       </Typography>
-                      <Typography sx={{ mt: 1 }}>
-                        {details?.environment}
-                      </Typography>
+                      <Typography sx={{ mt: 1 }}>{details?.environment}</Typography>
                       <Typography sx={{ pt: 3, color: '#645B59' }}>
                         Owner
                       </Typography>

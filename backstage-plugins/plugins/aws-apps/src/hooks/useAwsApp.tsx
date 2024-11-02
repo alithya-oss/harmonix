@@ -225,8 +225,8 @@ export const useAwsComponentFromContext = (): AwsComponentHookLoadingStatus => {
 
     svAppDeployEnv.app = {
       logGroupNames: [],
-      resourceGroupArn: providerAppData.AppResourceGroup || '',
-      cloudFormationStackName: providerAppData.StackName || '',
+      resourceGroupArn: providerAppData["AppResourceGroup"] || "",
+      cloudFormationStackName: providerAppData["StackName"] || "",
       appStack,
       s3BucketName: bucketName,
       links: [],

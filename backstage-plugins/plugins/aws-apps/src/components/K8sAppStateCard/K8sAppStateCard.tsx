@@ -240,9 +240,8 @@ const OpaAppStateOverview = ({
     }
   }
 
-  async function fetchAppState(): Promise<any> {
+  async function fetchAppState() {
     if (!clusterName) {
-      // console.log(`getting cluster name`);
       clusterNameParam = await cancellablePromise<GetParameterCommandOutput>(
         api.getSSMParameter({ ssmParamName: env.clusterName }),
       );
@@ -692,7 +691,7 @@ const OpaAppStateOverview = ({
                           </TableCell>
                           <TableCell id="appStatus">
                             {deploymentState?.appState
-                              ? deploymentState?.appState
+                              ? deploymentState.appState
                               : 'Not Running'}
                           </TableCell>
                         </TableRow>
@@ -705,7 +704,7 @@ const OpaAppStateOverview = ({
                           <TableCell id="providerName">
                             {`${deploymentState?.runningCount}/${deploymentState?.desiredCount}`}
                             {deploymentState?.pendingCount
-                              ? ` (${deploymentState?.pendingCount} Pending)`
+                              ? ` (${deploymentState.pendingCount} Pending)`
                               : ''}
                           </TableCell>
                         </TableRow>
@@ -717,7 +716,7 @@ const OpaAppStateOverview = ({
                           </TableCell>
                           <TableCell id="providerName">
                             {deploymentState?.lastStateTimestamp
-                              ? deploymentState?.lastStateTimestamp.toString()
+                              ? deploymentState.lastStateTimestamp.toString()
                               : ''}
                           </TableCell>
                         </TableRow>

@@ -59,6 +59,7 @@
     "@backstage/plugin-catalog": "^1.21.1",
     "@backstage/plugin-catalog-graph": "^0.4.7",
     "@backstage/plugin-catalog-react": "^1.12.2",
+    "@backstage/plugin-github-actions": "^0.6.16",
     "@backstage/plugin-permission-react": "^0.4.24",
     "@backstage/plugin-techdocs": "^1.10.7",
     "@backstage/plugin-techdocs-module-addons-contrib": "^1.1.12",

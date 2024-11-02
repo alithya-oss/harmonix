@@ -2,11 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React from 'react';
-import {
-  humanizeEntityRef,
-  EntityRefLink,
-  EntityRefLinks,
-} from '@backstage/plugin-catalog-react';
+import { humanizeEntityRef, EntityRefLink, EntityRefLinks } from '@backstage/plugin-catalog-react';
 import { Chip } from '@material-ui/core';
 
 import { OverflowTooltip, TableColumn } from '@backstage/core-components';
@@ -18,9 +14,7 @@ import { CatalogTableRow } from '@backstage/plugin-catalog';
 // CatalogTable.columns field.
 /** @public */
 export const columnFactories = Object.freeze({
-  createNameColumn(options?: {
-    defaultKind?: string;
-  }): TableColumn<CatalogTableRow> {
+  createNameColumn(options?: { defaultKind?: string }): TableColumn<CatalogTableRow> {
     function formatContent(entity: Entity): string {
       return (
         entity.metadata?.title ||
@@ -70,12 +64,7 @@ export const columnFactories = Object.freeze({
       cellStyle: {
         minWidth: '130px',
       },
-      render: ({ resolved }) => (
-        <EntityRefLinks
-          entityRefs={resolved.ownedByRelations}
-          defaultKind="group"
-        />
-      ),
+      render: ({ resolved }) => <EntityRefLinks entityRefs={resolved.ownedByRelations} defaultKind="group" />,
     };
   },
   createSpecTargetsColumn(): TableColumn<CatalogTableRow> {
@@ -86,9 +75,7 @@ export const columnFactories = Object.freeze({
         <>
           {(entity?.spec?.targets || entity?.spec?.target) && (
             <OverflowTooltip
-              text={(
-                (entity!.spec!.targets as JsonArray) || [entity.spec.target]
-              ).join(', ')}
+              text={((entity!.spec!.targets as JsonArray) || [entity.spec.target]).join(', ')}
               placement="bottom-start"
             />
           )}
@@ -311,22 +298,14 @@ export const columnFactories = Object.freeze({
         <>
           {entity.metadata.tags &&
             entity.metadata.tags.map(t => (
-              <Chip
-                key={t}
-                label={t}
-                size="small"
-                variant="outlined"
-                style={{ marginBottom: '0px' }}
-              />
+              <Chip key={t} label={t} size="small" variant="outlined" style={{ marginBottom: '0px' }} />
             ))}
         </>
       ),
       width: 'auto',
     };
   },
-  createTitleColumn(options?: {
-    hidden?: boolean;
-  }): TableColumn<CatalogTableRow> {
+  createTitleColumn(options?: { hidden?: boolean }): TableColumn<CatalogTableRow> {
     return {
       title: 'Title',
       field: 'entity.metadata.title',
@@ -334,10 +313,7 @@ export const columnFactories = Object.freeze({
       searchable: true,
     };
   },
-  createLabelColumn(
-    key: string,
-    options?: { title?: string; defaultValue?: string },
-  ): TableColumn<CatalogTableRow> {
+  createLabelColumn(key: string, options?: { title?: string; defaultValue?: string }): TableColumn<CatalogTableRow> {
     return {
       title: options?.title ?? 'Label',
       field: 'entity.metadata.labels',
@@ -345,19 +321,12 @@ export const columnFactories = Object.freeze({
         padding: '0px 16px 0px 20px',
       },
       render: ({ entity }: { entity: Entity }) => {
-        const labels: Record<string, string> | undefined =
-          entity.metadata?.labels;
-        const specifiedLabelValue =
-          (labels && labels[key]) || options?.defaultValue;
+        const labels: Record<string, string> | undefined = entity.metadata?.labels;
+        const specifiedLabelValue = (labels && labels[key]) || options?.defaultValue;
         return (
           <>
             {specifiedLabelValue && (
-              <Chip
-                key={specifiedLabelValue}
-                label={specifiedLabelValue}
-                size="small"
-                variant="outlined"
-              />
+              <Chip key={specifiedLabelValue} label={specifiedLabelValue} size="small" variant="outlined" />
             )}
           </>
         );

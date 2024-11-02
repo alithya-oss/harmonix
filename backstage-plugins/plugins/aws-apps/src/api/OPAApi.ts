@@ -75,17 +75,9 @@ export interface OPAApi {
     backendParamsOverrides?: BackendParams;
   }): Promise<GetSecretValueCommandOutput>;
 
-  getPlatformSecret({
-    secretName,
-  }: {
-    secretName: string;
-  }): Promise<GetSecretValueCommandOutput>;
+  getPlatformSecret({ secretName }: { secretName: string }): Promise<GetSecretValueCommandOutput>;
 
-  getPlatformSSMParam({
-    paramName,
-  }: {
-    paramName: string;
-  }): Promise<GetParameterCommandOutput>;
+  getPlatformSSMParam({ paramName }: { paramName: string }): Promise<GetParameterCommandOutput>;
 
   bindResource({
     repoInfo,

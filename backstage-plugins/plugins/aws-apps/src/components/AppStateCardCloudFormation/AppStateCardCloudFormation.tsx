@@ -318,13 +318,7 @@ const OpaAppStateOverview = ({
             )}
             <>Polling for updates...</>
             <br />
-            <Button
-              sx={{ mr: 2 }}
-              variant="outlined"
-              size="small"
-              disabled={false}
-              onClick={handleStopPolling}
-            >
+            <Button sx={{ mr: 2 }} variant="outlined" size="small" disabled={false} onClick={handleStopPolling}>
               Stop Polling
             </Button>
           </>
@@ -366,13 +360,7 @@ const OpaAppStateOverview = ({
               </Grid>
             </Grid>
             <Grid item>
-              <Button
-                sx={{ mr: 2 }}
-                variant="outlined"
-                size="small"
-                disabled={false}
-                onClick={handleRefresh}
-              >
+              <Button sx={{ mr: 2 }} variant="outlined" size="small" disabled={false} onClick={handleRefresh}>
                 Refresh
               </Button>
               <Button

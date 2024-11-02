@@ -29,8 +29,7 @@ const AppLinks = (props: AppLinksProps) => {
   const { entity } = useEntity();
   const app = useApp();
 
-  const iconResolver = (key?: string): IconComponent =>
-    key ? app.getSystemIcon(key) ?? LanguageIcon : LanguageIcon;
+  const iconResolver = (key?: string): IconComponent => (key ? app.getSystemIcon(key) ?? LanguageIcon : LanguageIcon);
 
   let links = entity?.metadata?.links || [];
   if (awsComponent.currentEnvironment.app.links) {
