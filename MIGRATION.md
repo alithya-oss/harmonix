@@ -109,6 +109,8 @@ mv -f software-templates/skeletons/tf_aws_* \
 
 ## 6. Move IaC/Environment workspaces
 
+Move CDK based Environment provider to the `harmonix` workspace, and include them in the list of the Yarn support workspaces.
+
 ```bash
 rm -rf workspaces/harmonix/platforms/*
 rsync -av \
@@ -121,6 +123,20 @@ done
 
 mv -f workspaces/harmonix/platforms/platform \
   workspaces/harmonix/platforms/installer
+
+rm -f \
+  workspaces/harmonix/platforms/package.json \
+  workspaces/harmonix/platforms/README.md \
+  workspaces/harmonix/platforms/tsconfig.json \
+  workspaces/harmonix/platforms/yarn.lock
+
+yq -p json -o json -i '
+.workspaces.packages += "platforms/*"
+' workspaces/harmonix/package.json
+
+yq -p json -o json -i '
+.include += "platforms/*/src"
+' workspaces/harmonix/tsconfig.json
 ```
 
 ## 7. Rename `build-script` to `hack`
